@@ -1,0 +1,15 @@
+name: copilotlb
+type: Load Balanced Web Service
+image:
+  build: ./Dockerfile
+  port: 80
+http:
+  path: '/'
+cpu: 256
+memory: 512
+count: 1
+environments:
+  production:
+    count: 3
+    cpu: 1024
+    memory: 1024
